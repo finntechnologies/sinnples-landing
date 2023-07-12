@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
+    "@tailwindcss/forms": "^0.5.3",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
-    "@tailwindcss/forms": "^0.5.3",
     "autoprefixer": "10.4.14",
     "clsx": "^1.2.1",
     "eslint": "8.44.0",
@@ -29,7 +29,7 @@
   "devDependencies": {
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.2",
-    "prettier": "^2.8.7",
+    "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "sharp": "^0.32.0"
   }

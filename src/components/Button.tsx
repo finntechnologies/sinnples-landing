@@ -1,5 +1,28 @@
 import Link from 'next/link'
 import clsx from 'clsx'
+import { HTMLAttributes } from 'react'
+
+
+interface ButtonProps extends HTMLAttributes<HTMLElement> {
+  variant?: 'solid' | 'outline';
+  color?: 'slate' | 'blue' | 'white';
+  className?: string;
+  href?: string;
+}
+
+
+interface VariantColors {
+  solid: {
+    slate: string;
+    blue?: string;
+    white?: string;
+  };
+  outline: {
+    slate: string;
+    blue?: string;
+    white?: string;
+  };
+};
 
 const baseStyles = {
   solid:
@@ -8,7 +31,7 @@ const baseStyles = {
     'group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none',
 }
 
-const variantStyles = {
+const variantStyles: VariantColors = {
   solid: {
     slate:
       'bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900',
@@ -25,12 +48,14 @@ const variantStyles = {
 }
 
 export function Button({
-  variant = 'solid',
-  color = 'slate',
+  variant = 'solid'
+  ,color = 'slate',
   className,
   href,
   ...props
-}) {
+}: ButtonProps) {
+
+  
   className = clsx(
     baseStyles[variant],
     variantStyles[variant][color],
